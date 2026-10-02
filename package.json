@@ -1,0 +1,26 @@
+{
+    "name": "shaddai-industrial",
+    "version": "1.0.0",
+    "description": "E-Commerce Frontend for Shaddai Industrial (Industrial Clothing)",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "build:css": "tailwindcss -i frontend/css/input.css -o frontend/css/style.css",
+        "watch:css": "tailwindcss -i frontend/css/input.css -o frontend/css/style.css --watch",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [
+        "ecommerce",
+        "ropa-industrial",
+        "firebase"
+    ],
+    "author": "TechStore Based",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^10.4.27",
+        "postcss": "^8.5.8",
+        "tailwindcss": "^3.4.19",
+        "vite": "^8.0.2"
+    }
+}

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* Diagonal slash background pattern matching new blue industrial style */
+.bg-slashes {
+    background-color: #080c16;
+    background-image:
+        linear-gradient(110deg, transparent 40%, #0052cc 40%, #0052cc 45%, transparent 45%, transparent 50%, #00beff 50%, #00beff 55%, transparent 55%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+/* Sharp Buttons */
+.btn-industrial {
+    background-color: #0052cc;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+.btn-industrial:hover {
+    background-color: #003c99;
+}
+
+/* Wavy Red Bottom */
+.hero-wave {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+}
+
+/* V-Shape bottom cut for sections */
+.clip-v-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+/* Infinite Marquee Animation for Carousels */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: scroll 25s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Fallback robusto para asegurar el fondo oscuro de la marca en todas las secciones */
+.bg-ind-black {
+    background-color: #080c16 !important;
+}
+
+/* Footer section headers with brand blue accent line */
+.footer-header {
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.footer-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 48px;
+    height: 2px;
+    background-color: #00beff; /* matching Shaddai's bright blue accent */
+}
+
+/* Floating widgets styling and animations */
+@keyframes pulse-soft {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.animate-pulse-soft {
+    animation: pulse-soft 2.5s infinite ease-in-out;
+}
+
+.floating-btn-cart:hover .floating-badge {
+    transform: scale(1.1);
+}

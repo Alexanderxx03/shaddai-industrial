@@ -1,0 +1,33 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Reglas Temporales para Desarrollo Local / Creación de DB
+    // ADVERTENCIA: Cerrar estas reglas antes de salir a producción
+    match /{document=**} {
+      allow read, write: if true;
+    }
+    
+    // ======== Ejemplo de Reglas Finales de Producción ========
+    
+    // Productos: Cualquier persona puede leer el catálogo. Solo Admin puede crear/editar.
+    // match /products/{productId} {
+    //   allow read: if true;
+    //   allow write: if request.auth != null && request.auth.token.role == 'admin';
+    // }
+    
+    // Usuarios: Solo el dueño de la cuenta puede leer o editar sus propios datos.
+    // match /users/{userId} {
+    //   allow read, write: if request.auth != null && request.auth.uid == userId;
+    // }
+    
+    // Órdenes: Un usuario autenticado puede crear un pedido, pero solo consultar los suyos.
+    // match /orders/{orderId} {
+    //   allow create: if request.auth != null;
+    //   allow read: if request.auth != null && resource.data.client.uid == request.auth.uid;
+    //   allow update, delete: if request.auth != null && request.auth.token.role == 'admin';
+    // }
+    
+  }
+}

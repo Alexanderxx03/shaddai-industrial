@@ -1,0 +1,26 @@
+# Dependencias
+node_modules/
+
+# Archivos de Firebase Locales
+.firebase/
+.firebaserc
+firebase-debug.log*
+
+# Entorno y Secretos
+.env
+.env.*
+.env.local
+!.env.example
+
+# Compilación y builds
+dist/
+
+# Scripts de mantenimiento y temporales
+modify_index.py
+.agents/
+.vscode/
+skills-lock.json
+
+# Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
